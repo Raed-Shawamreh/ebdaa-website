@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - Privacy Policy | Ebdaa POS</title>
+    <link rel="icon" type="image/svg+xml" href="/icon.svg">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Tahoma", Arial, sans-serif;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+            color: #1f2937;
+            background: #ffffff;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        h1 {
+            font-size: 1.9rem;
+            margin: 0 0 8px;
+            color: #0f172a;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 12px;
+        }
+        h2 {
+            font-size: 1.25rem;
+            margin: 32px 0 10px;
+            color: #1e3a8a;
+        }
+        p { margin: 0 0 12px; }
+        ul { margin: 0 0 14px; padding-inline-start: 24px; }
+        li { margin-bottom: 6px; }
+        a { color: #2563eb; text-decoration: underline; }
+        a:hover { color: #1e3a8a; }
+        .meta {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+        }
+        .lang-section {
+            margin-bottom: 60px;
+        }
+        .lang-section.ar { direction: rtl; text-align: right; }
+        .lang-section.en { direction: ltr; text-align: left; }
+        hr {
+            border: 0;
+            border-top: 1px dashed #cbd5e1;
+            margin: 48px 0;
+        }
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            direction: ltr;
+            display: inline-block;
+        }
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 60px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>سياسة الخصوصية - Privacy Policy</h1>
+<p class="meta">آخر تحديث: 2026-06-26 &nbsp;/&nbsp; Last updated: 2026-06-26</p>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- ARABIC VERSION                                                    -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<section class="lang-section ar" lang="ar">
+
+    <h2>مقدمة</h2>
+    <p>
+        تطبيق <strong>إبداع (Ebdaa POS)</strong> هو برنامج سطح مكتب (Electron) لإدارة نقاط البيع في المتاجر الصغيرة،
+        يطوّره ويشغّله <strong>Raed Shawamreh</strong>. تشرح هذه السياسة كيف يتعامل التطبيق مع بياناتك،
+        وبشكل خاص بيانات حسابك في Google عند استخدامك لميزة النسخ الاحتياطي السحابي عبر Google Drive.
+    </p>
+
+    <h2>1. البيانات التي يصل إليها التطبيق من حساب Google</h2>
+    <p>عند تفعيلك لميزة النسخ الاحتياطي السحابي، يطلب التطبيق الأذونات (OAuth Scopes) الآتية فقط:</p>
+    <ul>
+        <li><code>https://www.googleapis.com/auth/drive.file</code> — للسماح للتطبيق بإنشاء وقراءة الملفات التي ينشئها هو نفسه داخل Google Drive الخاص بك. هذا الإذن لا يمنح التطبيق صلاحية الاطلاع على أي ملف آخر في حسابك.</li>
+        <li><code>https://www.googleapis.com/auth/userinfo.email</code> — لعرض عنوان البريد الإلكتروني للحساب المرتبط داخل واجهة التطبيق فقط، حتى تعرف أي حساب Drive تستخدم.</li>
+    </ul>
+
+    <h2>2. كيف نستخدم هذه البيانات</h2>
+    <ul>
+        <li>ينشئ التطبيق مجلداً باسم <strong>"إبداع POS"</strong> داخل Google Drive الخاص بك.</li>
+        <li>يرفع داخل هذا المجلد ملفات نسخ احتياطية بصيغة JSON مضغوطة (gzip) تحتوي على بيانات قاعدة بياناتك المحلية (منتجات، فواتير، عملاء، إعدادات...).</li>
+        <li>يقرأ هذه الملفات لاحقاً فقط عند طلبك لاستعادة نسخة احتياطية.</li>
+        <li>عنوان بريدك يُعرض لك فقط داخل التطبيق ولا يُرسل إلى أي طرف خارجي.</li>
+    </ul>
+
+    <h2>3. أين تُخزَّن بياناتك</h2>
+    <ul>
+        <li>بيانات متجرك تُحفظ <strong>محلياً على جهازك</strong> داخل قاعدة بيانات المتصفح (IndexedDB).</li>
+        <li>نسخ Drive الاحتياطية تُرفع إلى <strong>Google Drive الخاص بك</strong> فقط — نحن لا نملك أي نسخة منها على خوادمنا.</li>
+        <li>تُرسل بيانات تشغيلية بسيطة جداً (heartbeat) إلى خوادم Firebase التابعة لنا تشمل معرّف الجهاز فقط، لأغراض إدارة التراخيص ومراقبة حالة التشغيل، بدون أي بيانات شخصية أو بيانات متجر.</li>
+    </ul>
+
+    <h2>4. عدم المشاركة، عدم استخدامها لأغراض إعلانية أو تدريبية</h2>
+    <ul>
+        <li>نحن <strong>لا نشارك</strong> بيانات Google الخاصة بك مع أي طرف ثالث.</li>
+        <li>نحن <strong>لا نستخدم</strong> بيانات Google الخاصة بك لأي إعلانات.</li>
+        <li>نحن <strong>لا نستخدم</strong> بيانات Google الخاصة بك لتدريب أو تطوير أي نماذج ذكاء اصطناعي.</li>
+        <li>الوصول للبيانات يقتصر على المستخدم نفسه فقط أو على من يخوّله صراحة عبر مفاتيح Google القياسية.</li>
+    </ul>
+
+    <h2>5. الأمان والتشفير</h2>
+    <ul>
+        <li>يُخزَّن <strong>refresh_token</strong> الخاص بـ OAuth <strong>مشفّراً محلياً</strong> على جهازك باستخدام <code>Electron safeStorage</code>،
+            الذي يعتمد على <strong>DPAPI</strong> في نظام Windows لربط التشفير بحساب المستخدم على الجهاز.</li>
+        <li>كل الاتصالات مع Google تتم عبر HTTPS باستخدام مكتبات Google الرسمية.</li>
+        <li>التطبيق لا يطلع على بياناتك ولا ينقلها إلى أي خادم تابع لنا.</li>
+    </ul>
+
+    <h2>6. كيف تسحب الإذن وتحذف بياناتك</h2>
+    <p>يحق لك في أي وقت إلغاء وصول التطبيق إلى حسابك في Google وحذف البيانات المتعلقة بذلك:</p>
+    <ul>
+        <li><strong>من داخل التطبيق:</strong> افتح الإعدادات &lt; النسخ الاحتياطي السحابي &lt; زر "قطع الاتصال بـ Google Drive"، وسيتم حذف الـ refresh_token المخزّن محلياً ومسح بيانات الجلسة.</li>
+        <li><strong>من حسابك في Google:</strong> ادخل إلى
+            <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a>،
+            اختر "Ebdaa POS" واضغط "إزالة الوصول".</li>
+        <li><strong>لحذف النسخ الاحتياطية:</strong> يمكنك حذف مجلد "إبداع POS" من Google Drive يدوياً في أي وقت.</li>
+    </ul>
+
+    <h2>7. الالتزام بسياسات Google</h2>
+    <p>
+        يلتزم تطبيق إبداع باستخدام بيانات Google API بما يتوافق مع
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>،
+        بما في ذلك متطلبات <strong>Limited Use</strong>. وصول التطبيق لبيانات حسابك في Google يقتصر تماماً على
+        تنفيذ ميزة النسخ الاحتياطي والاستعادة كما هو موضح أعلاه.
+    </p>
+
+    <h2>8. التواصل</h2>
+    <p>
+        لأي استفسار أو طلب حذف بيانات أو ملاحظة حول سياسة الخصوصية، يُرجى التواصل عبر:
+        <br>
+        البريد الإلكتروني: <a href="mailto:raed313shaw@gmail.com">raed313shaw@gmail.com</a>
+        <br>
+        الموقع الرسمي: <a href="https://ebdaa.raedshaw.online" target="_blank">https://ebdaa.raedshaw.online</a>
+    </p>
+
+</section>
+
+<hr>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- ENGLISH VERSION                                                   -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<section class="lang-section en" lang="en">
+
+    <h2>Introduction</h2>
+    <p>
+        <strong>Ebdaa POS</strong> is a desktop (Electron) point-of-sale application for small retail stores,
+        developed and operated by <strong>Raed Shawamreh</strong>. This Privacy Policy explains how the application
+        handles your data, with particular focus on Google account data accessed when you enable the optional
+        Google Drive cloud backup feature.
+    </p>
+
+    <h2>1. Google User Data the App Accesses</h2>
+    <p>When you enable cloud backup, the application requests only the following OAuth scopes:</p>
+    <ul>
+        <li><code>https://www.googleapis.com/auth/drive.file</code> — allows the app to create and access only the files it has itself created inside your Google Drive. This scope does <strong>not</strong> grant access to any other files in your Drive.</li>
+        <li><code>https://www.googleapis.com/auth/userinfo.email</code> — used solely to display the connected account's email address inside the application UI, so you can identify which Drive account is in use.</li>
+    </ul>
+
+    <h2>2. How We Use This Data</h2>
+    <ul>
+        <li>The app creates a folder named <strong>"إبداع POS"</strong> inside your Google Drive.</li>
+        <li>It uploads gzipped JSON backup files into that folder containing your local database (products, invoices, customers, settings, etc.).</li>
+        <li>It later reads those files only when you explicitly request a backup restore.</li>
+        <li>Your email is shown to you inside the app only and is never transmitted to any third party.</li>
+    </ul>
+
+    <h2>3. Where Your Data Is Stored</h2>
+    <ul>
+        <li>Your store data is stored <strong>locally on your device</strong> in IndexedDB.</li>
+        <li>Drive backups are uploaded to <strong>your own Google Drive</strong> — we do not retain any copy on our servers.</li>
+        <li>A minimal heartbeat (device identifier only, no personal data) is sent to our Firebase backend for license management and operational monitoring. It contains no personal information and no store data.</li>
+    </ul>
+
+    <h2>4. No Sharing, No Ads, No AI Training</h2>
+    <ul>
+        <li>We <strong>do not</strong> share your Google user data with any third party.</li>
+        <li>We <strong>do not</strong> use your Google user data for any advertising purpose.</li>
+        <li>We <strong>do not</strong> use your Google user data to train or develop any AI / ML models.</li>
+        <li>Access is limited to you, the authenticated user, through Google's standard OAuth flow.</li>
+    </ul>
+
+    <h2>5. Security &amp; Encryption</h2>
+    <ul>
+        <li>OAuth <strong>refresh tokens</strong> are stored <strong>encrypted locally</strong> on your machine using <code>Electron safeStorage</code>, which on Windows is backed by <strong>DPAPI</strong>, binding encryption to your Windows user account.</li>
+        <li>All communication with Google APIs is performed over HTTPS using Google's official client libraries.</li>
+        <li>The application does not transmit your stored data to any of our servers.</li>
+    </ul>
+
+    <h2>6. How to Revoke Access and Delete Your Data</h2>
+    <p>You can revoke the app's access to your Google account and delete the related data at any time:</p>
+    <ul>
+        <li><strong>From inside the app:</strong> open Settings &gt; Cloud Backup &gt; click "Disconnect Google Drive". This deletes the locally stored refresh token and clears the session.</li>
+        <li><strong>From your Google account:</strong> visit
+            <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a>,
+            select "Ebdaa POS" and click "Remove Access".</li>
+        <li><strong>To delete backups:</strong> manually delete the "إبداع POS" folder from your Google Drive at any time.</li>
+    </ul>
+
+    <h2>7. Compliance with Google Policies</h2>
+    <p>
+        Ebdaa POS uses Google API data in accordance with the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>,
+        including the <strong>Limited Use</strong> requirements. Access to your Google account data is strictly
+        limited to providing the backup and restore feature described above.
+    </p>
+
+    <h2>8. Contact</h2>
+    <p>
+        For any inquiry, data deletion request, or feedback regarding this Privacy Policy, please contact:
+        <br>
+        Email: <a href="mailto:raed313shaw@gmail.com">raed313shaw@gmail.com</a>
+        <br>
+        Website: <a href="https://ebdaa.raedshaw.online" target="_blank">https://ebdaa.raedshaw.online</a>
+    </p>
+
+</section>
+
+<div class="footer">
+    © 2026 Ebdaa POS — Raed Shawamreh. All rights reserved.
+</div>
+
+</body>
+</html>
