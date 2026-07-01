@@ -551,7 +551,7 @@
                             <line x1="12" y1="15" x2="12" y2="3"/>
                         </svg>
                     </div>
-                    <div class="stat-number" data-count="33">0</div>
+                    <div class="stat-number" data-count="33" id="dl-count">0</div>
                     <div class="stat-label">إجمالي مرات التنزيل</div>
                 </div>
 
@@ -675,6 +675,10 @@
                 <span style="margin: 0 8px; color: var(--text-dim);">·</span>
                 للدعم والتفعيل: <a href="https://wa.me/970568210192" target="_blank">+970 56 821 0192</a>
             </p>
+            <p style="margin-top:10px; font-size: 12px; color: var(--text-dim);">
+                <span>👁 عدد الزيارات:</span>
+                <span id="visits-count">—</span>
+            </p>
         </footer>
     </div>
 
@@ -712,7 +716,46 @@
             });
         }, { threshold: 0.4 });
 
-        document.querySelectorAll('[data-count]').forEach((el) => io.observe(el));
+        const observeCounts = () =>
+            document.querySelectorAll('[data-count]').forEach((el) => io.observe(el));
+
+        // ═══ أرقام وهمية / أساس (base) — عدّلها هنا ═══
+        const BASELINE_DOWNLOADS = 50;   // يُضاف على العدد الحقيقي من GitHub
+        const BASELINE_VISITS    = 100;   // يُضاف على عدد الزيارات من Worker
+
+        // عدّاد التنزيلات من GitHub Releases
+        const fetchDownloads = async () => {
+            try {
+                const r = await fetch('https://api.github.com/repos/Raed-Shawamreh/ebdaa-releases/releases');
+                if (!r.ok) return;
+                const releases = await r.json();
+                const real = releases
+                    .flatMap((rel) => rel.assets || [])
+                    .filter((a) => /\.exe$/i.test(a.name))
+                    .reduce((sum, a) => sum + (a.download_count || 0), 0);
+                const total = real + BASELINE_DOWNLOADS;
+                const el = document.getElementById('dl-count');
+                if (el && total > 0) el.setAttribute('data-count', String(total));
+            } catch (_) { /* fallback يبقى الرقم الافتراضي */ }
+        };
+
+        // عدّاد الزيارات من Cloudflare Worker
+        // ⚠️ استبدل الرابط بعد نشر الـ Worker
+        const VISITS_ENDPOINT = 'https://ebdaa-stats.raed313shaw.workers.dev/hit';
+        const fetchVisits = async () => {
+            try {
+                const r = await fetch(VISITS_ENDPOINT, { method: 'POST' });
+                if (!r.ok) return;
+                const { visits } = await r.json();
+                const el = document.getElementById('visits-count');
+                if (el && typeof visits === 'number') {
+                    const total = visits + BASELINE_VISITS;
+                    el.textContent = new Intl.NumberFormat('ar-EG').format(total);
+                }
+            } catch (_) { /* يبقى — */ }
+        };
+
+        Promise.allSettled([fetchDownloads(), fetchVisits()]).then(observeCounts);
     </script>
 </body>
 </html>

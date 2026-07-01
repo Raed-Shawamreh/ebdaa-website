@@ -1,0 +1,10 @@
+name = "ebdaa-stats"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# اربط KV namespace بعد إنشائه:
+# wrangler kv namespace create STATS
+# انسخ الـ id الناتج وضعه هنا:
+[[kv_namespaces]]
+binding = "STATS"
+id = "f71fd2c7ea69451593a3c63cc48b2833"
