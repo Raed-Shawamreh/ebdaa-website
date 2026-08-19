@@ -3,7 +3,7 @@
 // يستخدم KV namespace اسمه STATS (اربطه في wrangler.toml)
 
 const CORS = {
-  'Access-Control-Allow-Origin': 'https://ebdaa.raedshaw.online',
+  'Access-Control-Allow-Origin': 'https://ebdaa.karmeld.store',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };

@@ -5,7 +5,7 @@
 ## النشر
 
 أي push على `main` ينشر تلقائياً عبر Cloudflare Pages إلى:
-- https://ebdaa.raedshaw.online (production)
+- https://ebdaa.karmeld.store (production)
 
 ## تحديث رقم الإصدار + رابط التنزيل
 
